@@ -1,5 +1,5 @@
 const ActivitySector = require("../models/activitySector");
-const Proffesion = require("../models/proffesion");
+const Profession = require("../models/profession");
 const mongoose = require("mongoose");
 
 
@@ -87,164 +87,167 @@ const activities = [
 ];
 
 
-
 const professions = [
     {
-        name: "asistent financiar",
+        name: "Asistent financiar",
         score: 45
     },
     {
-        name: "actor",
+        name: "Actor",
         score: 35
     },
     {
-        name: "agent agricol",
+        name: "Agent agricol",
         score: 30
     },
     {
-        name: "agent comert",
+        name: "Agent comert",
         score: 45
     },
     {
-        name: "agent de turism",
+        name: "Agent de turism",
         score: 50
     },
     {
-        name: "agent imobiliar",
+        name: "Agent imobiliar",
         score: 45
     },
     {
-        name: "analist financiar",
+        name: "Analist financiar",
         score: 60
     },
     {
-        name: "arhitect",
+        name: "Arhitect",
         score: 55
     },
     {
-        name: "asistent director",
+        name: "Asistent director",
         score: 70
     },
     {
-        name: "asistent hr",
+        name: "Asistent hr",
         score: 50
     },
     {
-        name: "asistent medical",
+        name: "Asistent medical",
         score: 75
     },
     {
-        name: "asistent personal",
+        name: "Asistent personal",
         score: 45
     },
     {
-        name: "asistent social",
+        name: "Asistent social",
         score: 55
     },
     {
-        name: "avocat",
+        name: "Avocat",
         score: 80
     },
     {
-        name: "brutar",
+        name: "Brutar",
         score: 45
     },
     {
-        name: "bucatar",
+        name: "Bucatar",
         score: 65
     },
     {
-        name: "casier",
+        name: "Casier",
         score: 45
     },
     {
-        name: "contabil",
+        name: "Contabil",
         score: 70
     },
     {
-        name: "curier",
+        name: "Curier",
         score: 40
     },
     {
-        name: "developer",
+        name: "Developer",
         score: 80
     },
     {
-        name: "director general",
-        score: 80
+        name: "Director general",
+        score: 120
     },
     {
-        name: "educator",
+        name: "Educator",
+        score: 45
+    },
+    {
+        name: "Profesor",
         score: 65
     },
     {
-        name: "profesor",
-        score: 65
-    },
-    {
-        name: "programator",
+        name: "Programator",
         score: 80
     },
     {
-        name: "inginer it",
-        score: 80
+        name: "Inginer IT",
+        score: 100
     },
     {
-        name: "inginer electronist",
+        name: "Inginer electronist",
         score: 70
     },
     {
-        name: "instructor auto",
+        name: "Instructor auto",
         score: 60
     },
     {
-        name: "lacatus",
+        name: "Lacatus",
         score: 40
     },
     {
-        name: "mecanic auto",
+        name: "Mecanic auto",
         score: 55
     },
     {
-        name: "operator",
+        name: "Operator",
         score: 50
     },
     {
-        name: "muncitor calificat",
+        name: "Muncitor calificat",
         score: 50
     },
     {
-        name: "psiholog",
+        name: "Psiholog",
         score: 80
     },
     {
-        name: "secretar",
+        name: "Secretar",
         score: 50
     },
     {
-        name: "strungar",
+        name: "Strungar",
         score: 40
     },
     {
-        name: "sudor",
+        name: "Sudor",
         score: 40
     },
     {
-        name: "taximetrist",
+        name: "Taximetrist",
         score: 30
     },
     {
-        name: "consulant vanzari",
+        name: "Consulant vanzari",
         score: 50
     },
+    {
+        name: "Pensioar",
+        score: 70
+    }
 
 ]
 const seedDB = async () => {
     await ActivitySector.deleteMany({});
     await ActivitySector.insertMany(activities)
 
-    await Proffesion.deleteMany({});
-    await Proffesion.insertMany(professions);
+    await Profession.deleteMany({});
+    await Profession.insertMany(professions);
 };
 
 seedDB().then(() => {

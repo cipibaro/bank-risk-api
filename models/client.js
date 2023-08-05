@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+let Schema = mongoose.Schema;
 
 const clientSchema = mongoose.Schema({
     _id: mongoose.Types.ObjectId,
@@ -16,6 +16,7 @@ const clientSchema = mongoose.Schema({
         type: String,
         min: 13,
         max: 13,
+        unique: true,
         required: true
     },
     sex: {
@@ -113,7 +114,15 @@ const clientSchema = mongoose.Schema({
         required: true
     },
     activitySector: {
-        type: Schema.Types.ObjectId, ref: 'activitySector',
+        type: Schema.Types.ObjectId, ref: 'activity-sector',
+        required: true
+    },
+    profession: {
+        type: Schema.Types.ObjectId, ref: 'profession',
+        required: true
+    },
+    dateOfHiring: {
+        type: Date,
         required: true
     }
 });
