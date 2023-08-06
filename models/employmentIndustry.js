@@ -13,4 +13,11 @@ const employmentIndustrySchema = mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('employment-industry', employmentIndustrySchema);
+
+const EmploymentIndustry = mongoose.model('employment-industry', employmentIndustrySchema);
+
+employmentIndustrySchema.statics.findByName = function (name) {
+    return this.findOne({ name });
+};
+
+module.exports = EmploymentIndustry;
