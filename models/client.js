@@ -24,7 +24,7 @@ const clientSchema = mongoose.Schema({
         enum: ['m', 'f'],
         required: true
     },
-    pob: {
+    placeOfBirth: {
         type: String,
         require: true,
     },
@@ -36,13 +36,13 @@ const clientSchema = mongoose.Schema({
         type: Date,
         required: true
     },
-    ci: {
+    series: {
         type: String,
         min: 2,
         max: 2,
         required: true
     },
-    nr: {
+    seriesNumber: {
         type: String,
         min: 6,
         max: 6,
@@ -67,11 +67,11 @@ const clientSchema = mongoose.Schema({
         type: Boolean,
         default: false,
     },
-    carOwner: {
+    ownsCar: {
         type: Boolean,
         default: false,
     },
-    peopleInCare: {
+    dependents: {
         type: Number,
         min: 0,
         max: 10,
@@ -92,13 +92,13 @@ const clientSchema = mongoose.Schema({
         min: 1,
         required: true
     },
-    yearsOfWork: {
+    lengthOfEmployment: {
         type: Number,
         min: 1,
         max: 100,
         required: true
     },
-    debt: {
+    outstandingDebt: {
         type: Number,
         min: 0,
         required: true
@@ -113,19 +113,30 @@ const clientSchema = mongoose.Schema({
         enum: ['Pensie', 'Salariu'],
         required: true
     },
-    activitySector: {
-        type: Schema.Types.ObjectId, ref: 'activity-sector',
+    employmentIndustry: {
+        type: Schema.Types.ObjectId, ref: 'employment-Industry',
         required: true
     },
     profession: {
         type: Schema.Types.ObjectId, ref: 'profession',
         required: true
     },
-    dateOfHiring: {
-        type: Date,
+    creditHistory: {
+        type: String,
+        Enum: ["Foarte bun", "Bun", "Fara istoric"],
+        required: true
+    },
+    paymentHistory: {
+        type: String,
+        enum: ["Foarte bun platnic","Bun platnic", "Rau platnic"],
+        required: true
+    },
+    existingCreditAccounts: {
+        type: Number,
         required: true
     }
 });
+const clientLowRisk = new Client("John", 35, 3000, 1201, "Good", 0.2, "Employed", true, true, "Casatorit", 5, "Liceu", 20, 0, 15, "Good", "Finance");
 
 
 module.exports = mongoose.model('Client', clientSchema);

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const activitySectorSchema = mongoose.Schema({
+const employmentIndustrySchema = mongoose.Schema({
     _id: mongoose.Types.ObjectId,
     name: {
         type: String,
@@ -13,4 +13,4 @@ const activitySectorSchema = mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('activity-sectors', activitySectorSchema);
+module.exports = mongoose.model('employment-industry', employmentIndustrySchema);

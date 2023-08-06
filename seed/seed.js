@@ -1,4 +1,4 @@
-const ActivitySector = require("../models/activitySector");
+const ActivitySector = require("../models/employmentIndustry");
 const Profession = require("../models/profession");
 const mongoose = require("mongoose");
 

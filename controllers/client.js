@@ -1,6 +1,6 @@
 const Client = require('../models/client');
 
-const ActivitySector = require('../models/activitySector')
+const ActivitySector = require('../models/employmentIndustry')
 const Profession = require('../models/profession')
 const Risk = require('../controllers/risk');
 

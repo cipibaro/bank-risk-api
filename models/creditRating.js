@@ -12,7 +12,7 @@ const creditRatingSchema = mongoose.Schema({
     },
     creditRating: {
         type: String,
-        enum: ['Excellent Credit (Low Risk)', 'Good Credit (Moderate Risk)', 'Fair Credit (Moderate to High Risk)', 'Poor Credit (High Risk)', 'Possible creditworthy client (Upper Approximation)', 'Not creditworthy']
+        enum: ['Excellent Credit (Low Risk)', 'Very Good Credit (Low Risk)', 'Good Credit (Moderate Risk)', 'Fair Credit (Moderate to High Risk)', 'Poor Credit (High Risk)', 'Possible creditworthy client (Upper Approximation)', 'Not creditworthy']
     }
 });
 
