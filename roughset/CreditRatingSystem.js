@@ -1,7 +1,11 @@
+const MIN_INCOME = 1900;
+const MIN_CREDIT_SCORE = 600;
+const MAX_DEBT_PERCENTAGE = 40;
 class CreditRatingSystem {
     constructor() {
         // ... (if needed, you can store the array of clients here)
     }
+
 
 
     studiesPoints(client) {
@@ -244,32 +248,32 @@ class CreditRatingSystem {
         }
     }
 
-    belongsToLowerApproximation(client, minIncome, minCreditScore, maxDebtPercentage) {
+    belongsToLowerApproximation(client) {
         return (
-            client.income >= minIncome &&
-            client.creditScore >= minCreditScore &&
-            client.outstandingDebt <= (client.income * maxDebtPercentage) / 100
+            client.income >= MIN_INCOME &&
+            client.creditScore >= MIN_CREDIT_SCORE &&
+            client.outstandingDebt <= (client.income * MAX_DEBT_PERCENTAGE) / 100
         );
     }
 
-    belongsToUpperApproximation(client, minIncome, minCreditScore, maxDebtPercentage) {
-        const maxOutstandingDebt = (client.income * maxDebtPercentage) / 100;
+    belongsToUpperApproximation(client) {
+        const maxOutstandingDebt = (client.income * MAX_DEBT_PERCENTAGE) / 100;
         return (
-            client.income >= minIncome &&
-            client.creditScore >= minCreditScore &&
+            client.income >= MIN_INCOME &&
+            client.creditScore >= MIN_CREDIT_SCORE &&
             client.outstandingDebt > maxOutstandingDebt
         );
     }
 
-    getCreditRating(client, minIncome, minCreditScore, maxDebtPercentage) {
+    getCreditRating(client) {
         try {
             // Check for not creditworthy condition
-            if (client.income < minIncome || client.outstandingDebt > (client.income * maxDebtPercentage) / 100) {
+            if (client.income < MIN_INCOME || client.outstandingDebt > (client.income * MAX_DEBT_PERCENTAGE) / 100) {
                 return "Not creditworthy";
             }
 
-            const lowerApproximation = this.belongsToLowerApproximation(client, minIncome, minCreditScore, maxDebtPercentage);
-            const upperApproximation = this.belongsToUpperApproximation(client, minIncome, minCreditScore, maxDebtPercentage);
+            const lowerApproximation = this.belongsToLowerApproximation(client);
+            const upperApproximation = this.belongsToUpperApproximation(client);
 
             if (lowerApproximation) {
                 if (client.creditScore >= 800) {

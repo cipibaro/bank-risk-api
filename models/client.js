@@ -254,48 +254,5 @@ const clientSchema = mongoose.Schema({
     }
 });
 
-
 const Client = mongoose.model('Client', clientSchema);
-class ClientModel {
-    static async createClient(clientData) {
-        try {
-            return await Client.create(clientData);
-        } catch (error) {
-            throw new Error('Error creating client: ' + error.message);
-        }
-    }
-
-    static async getClientById(clientId) {
-        try {
-            return await Client.findById(clientId);
-        } catch (error) {
-            throw new Error('Error fetching client: ' + error.message);
-        }
-    }
-
-    static async getAllClients() {
-        try {
-            return await Client.find();
-        } catch (error) {
-            throw new Error('Error fetching clients: ' + error.message);
-        }
-    }
-
-    static async updateClient(clientId, updatedClientData) {
-        try {
-            return await Client.findByIdAndUpdate(clientId, updatedClientData, { new: true });
-        } catch (error) {
-            throw new Error('Error updating client: ' + error.message);
-        }
-    }
-
-    static async deleteClient(clientId) {
-        try {
-            return await Client.findByIdAndDelete(clientId);
-        } catch (error) {
-            throw new Error('Error deleting client: ' + error.message);
-        }
-    }
-}
-
-module.exports = ClientModel;
+module.exports = Client;

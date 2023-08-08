@@ -23,22 +23,5 @@ const creditRatingSchema = mongoose.Schema({
     },
 });
 
-// Instance methods for CRUD operations
-creditRatingSchema.methods.createCreditRating = function () {
-    return this.save();
-};
 
-creditRatingSchema.methods.getCreditRatingById = function (creditRatingId) {
-    return this.model('CreditRating').findById(creditRatingId);
-};
-
-creditRatingSchema.methods.updateCreditRating = function (updateData) {
-    Object.assign(this, updateData);
-    return this.save();
-};
-
-creditRatingSchema.methods.deleteCreditRating = function () {
-    return this.remove();
-};
-
-module.exports = mongoose.model('Credit-Rating', creditRatingSchema);
+module.exports = mongoose.model('Client-Credit-Rating', creditRatingSchema);

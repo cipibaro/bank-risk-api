@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 
 const clientRoutes = require('./routes/client');
-
+const ratingRoutes = require('./routes/creditRating');
 const app = express();
 
 
@@ -29,6 +29,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 app.use(clientRoutes);
+app.use(ratingRoutes);
 
 
 app.get('/', (req, res, next) => {
