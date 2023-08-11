@@ -8,6 +8,11 @@ const mongoose = require('mongoose');
 
 const clientRoutes = require('./routes/client');
 const ratingRoutes = require('./routes/creditRating');
+const industryRoutes = require('./routes/employmentIndustry');
+const professionRoutes = require('./routes/profession');
+
+
+
 const app = express();
 
 
@@ -30,6 +35,8 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(clientRoutes);
 app.use(ratingRoutes);
+app.use(industryRoutes);
+app.use(professionRoutes);
 
 
 app.get('/', (req, res, next) => {
