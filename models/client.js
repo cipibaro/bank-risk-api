@@ -89,7 +89,7 @@ const clientSchema = mongoose.Schema({
     sex: {
         type: String,
         enum: ['m', 'f'],
-        required: [true, 'Only M or F']
+        required: [true, 'Only m or f']
     },
     placeOfBirth: {
         type: String,
