@@ -1,9 +1,8 @@
 const MIN_INCOME = 1900;
-const MIN_CREDIT_SCORE = 600;
+const MIN_CREDIT_SCORE = 60;
 const MAX_DEBT_PERCENTAGE = 40;
 class CreditRatingSystem {
     constructor() {
-        // ... (if needed, you can store the array of clients here)
     }
 
 
@@ -12,16 +11,16 @@ class CreditRatingSystem {
         let studiesPoints = 0
         switch (client.studies) {
             case "Universitate":
-                studiesPoints += 200;
+                studiesPoints += 20;
                 break;
             case "Liceu":
-                studiesPoints += 100;
+                studiesPoints += 10;
                 break;
             case "Postlicela":
-                studiesPoints += 50;
+                studiesPoints += 5;
                 break;
             case "Studii Primare":
-                studiesPoints += 25;
+                studiesPoints += 2;
                 break;
             default:
                 break;
@@ -35,30 +34,28 @@ class CreditRatingSystem {
         let age = client.age;
         let agePoints = 0;
         if (age >= 18 && age <= 20)
-            agePoints += age * -age;
-        else if (age > 20 && age <= 24)
-            agePoints += age * 0.5;
-        else if (age > 24 && age <= 28)
-            agePoints += age * 4;
+            agePoints += age * 0.1;
+        else if (age > 20 && age <= 28)
+            agePoints += age * 0.2;
         else if (age > 28 && age <= 32)
-            agePoints += age * 5;
+            agePoints += age * 0.3;
         else if (age > 32 && age <= 36)
-            agePoints += age * 6;
+            agePoints += age * 0.4;
         else if (age > 36 && age <= 50)
-            agePoints += age * 8;
+            agePoints += age * 0.5;
 
         console.log("Points from age: " + agePoints);
         return agePoints;
     }
 
     pointsFromBoolean(value) {
-        let points = value ? 50 : 0;
+        let points = value ? 5 : 0;
         console.log("Points from politic/car: " + points);
         return points
     }
 
     dependentsPoints(client) {
-        let points = client.dependents !== 0 ? client.dependents * -100 : 0;
+        let points = client.dependents !== 0 ? client.dependents * -10 : 0;
         console.log("Points from dependents: " + points);
         return points;
     }
@@ -67,14 +64,14 @@ class CreditRatingSystem {
         let relationshipPoints = 0;
         switch (client.relationshipStatus) {
             case "Casatorit":
-                relationshipPoints += client.relationshipAge >= 1 ? 20 : 0;
-                relationshipPoints += client.relationshipAge >= 5 ? 30 : 0;
-                relationshipPoints += client.relationshipAge >= 10 ? 50 : 0;
+                relationshipPoints += client.relationshipAge >= 1 ? 2 : 0;
+                relationshipPoints += client.relationshipAge >= 5 ? 3 : 0;
+                relationshipPoints += client.relationshipAge >= 10 ? 5 : 0;
                 break;
             case "Concubinaj":
-                relationshipPoints += client.relationshipAge >= 1 ? 10 : 0;
-                relationshipPoints += client.relationshipAge >= 5 ? 20 : 0;
-                relationshipPoints += client.relationshipAge >= 10 ? 40 : 0;
+                relationshipPoints += client.relationshipAge >= 1 ? 1 : 0;
+                relationshipPoints += client.relationshipAge >= 5 ? 2 : 0;
+                relationshipPoints += client.relationshipAge >= 10 ? 4 : 0;
                 break;
             default:
                 // No points for other relationship statuses
@@ -90,9 +87,9 @@ class CreditRatingSystem {
         let income = client.income;
 
         if (income >= 1900 && income <= 2200) {
-            incomePoints += client.income * 0.1;
+            incomePoints += client.income * 0.01;
         } else if (income > 2200) {
-            incomePoints += client.income * 0.12;
+            incomePoints += client.income * 0.012;
         }
 
         console.log("Points from income: " + incomePoints);
@@ -100,14 +97,14 @@ class CreditRatingSystem {
     }
 
     employmentLengthPoints(client) {
-        let points = client.lengthOfEmployment >= 2 ? client.lengthOfEmployment * 50 : 50;
+        let points = client.lengthOfEmployment >= 2 ? client.lengthOfEmployment * 1.5 : 5;
 
         console.log("Points from employmentLength: " + points);
         return points;
     }
 
     debtPoints(client) {
-        let points = client.outstandingDebt * -0.4;
+        let points = client.outstandingDebt * -0.04;
         console.log("Points from debt: " + points);
         return points;
     }
@@ -116,10 +113,10 @@ class CreditRatingSystem {
         let occupationPoints = 0;
         switch (client.occupation) {
             case "Angajat":
-                occupationPoints += 50;
+                occupationPoints += 5;
                 break;
             case "Pensionar":
-                occupationPoints += 30
+                occupationPoints += 3
                 break
             default:
                 break;
@@ -133,10 +130,10 @@ class CreditRatingSystem {
         let typeOfIncomePoints = 0;
         switch (client.typeOfIncome) {
             case "Salariu":
-                typeOfIncomePoints += 50;
+                typeOfIncomePoints += 5;
                 break;
             case "Pensie":
-                typeOfIncomePoints += 30
+                typeOfIncomePoints += 3
                 break
             default:
                 break;
@@ -150,10 +147,10 @@ class CreditRatingSystem {
         let creditHistoryPoints = 0;
         switch (client.creditHistory) {
             case "Foarte bun" :
-                creditHistoryPoints = 100;
+                creditHistoryPoints = 10;
                 break;
             case "Bun" :
-                creditHistoryPoints = 50;
+                creditHistoryPoints = 5;
                 break;
             case "Fara istoric" :
                 creditHistoryPoints += 0;
@@ -170,13 +167,13 @@ class CreditRatingSystem {
         let paymentHistoryPoints = 0;
         switch (client.paymentHistory) {
             case "Foarte bun platnic" :
-                paymentHistoryPoints += 100;
+                paymentHistoryPoints += 10;
                 break;
             case "Bun platnic":
-                paymentHistoryPoints += 50;
+                paymentHistoryPoints += 5;
                 break;
             case "Rau platnic" :
-                paymentHistoryPoints -= 500;
+                paymentHistoryPoints -= 50;
                 break;
             default:
                 paymentHistoryPoints += 0;
@@ -187,7 +184,7 @@ class CreditRatingSystem {
     }
 
     existingCreditAccountPoints(client) {
-        let points = client.existingCreditAccounts >= 2 ? 50 : 0;
+        let points = client.existingCreditAccounts >= 2 ? 5 : 5;
         console.log("Points from existingCreditAccount: " + points);
         return points;
     }
@@ -195,9 +192,9 @@ class CreditRatingSystem {
     dtiRatioPoints(client) {
         let dtiRatioPoints = 0;
         if (client.dtiRatio <= 0.3) {
-            dtiRatioPoints = 200;
+            dtiRatioPoints = 20;
         } else if (client.dtiRatio <= 0.4) {
-            dtiRatioPoints = 50;
+            dtiRatioPoints = 5;
         }
 
         console.log("Points from dtiRatioPoints: " + dtiRatioPoints);
@@ -218,7 +215,6 @@ class CreditRatingSystem {
 
     evaluateCredit(client) {
         try {
-
             let totalPoints = this.studiesPoints(client) +
                 this.agePoints(client) +
                 this.pointsFromBoolean(client.politicalExposure) +
@@ -260,7 +256,7 @@ class CreditRatingSystem {
         const maxOutstandingDebt = (client.income * MAX_DEBT_PERCENTAGE) / 100;
         return (
             client.income >= MIN_INCOME &&
-            client.creditScore >= MIN_CREDIT_SCORE &&
+            client.creditScore < MIN_CREDIT_SCORE &&
             client.outstandingDebt > maxOutstandingDebt
         );
     }
@@ -268,27 +264,25 @@ class CreditRatingSystem {
     getCreditRating(client) {
         try {
             // Check for not creditworthy condition
-            if (client.income < MIN_INCOME || client.outstandingDebt > (client.income * MAX_DEBT_PERCENTAGE) / 100) {
+           /* if (client.income < MIN_INCOME || client.outstandingDebt > (client.income * MAX_DEBT_PERCENTAGE) / 100) {
                 return "Not creditworthy";
-            }
+            }*/
 
             const lowerApproximation = this.belongsToLowerApproximation(client);
             const upperApproximation = this.belongsToUpperApproximation(client);
 
             if (lowerApproximation) {
-                if (client.creditScore >= 800) {
+                if (client.creditScore >= 80) {
                     return "Excellent Credit (Very Low Risk)";
-                } else if (client.creditScore >= 750) {
-                    return "Very Good Credit (Low Risk)";
-                } else if (client.creditScore >= 700) {
+                } else if (client.creditScore >= 70) {
                     return "Good Credit (Moderate Risk)";
-                } else if (client.creditScore >= 650) {
-                    return "Fair Credit (Moderate to High Risk)";
-                } else if (client.creditScore >= 600) {
+                } else if (client.creditScore >= 60) {
                     return "Poor Credit (High Risk)";
                 }
             } else if (upperApproximation) {
-                return "Possible creditworthy client (Upper Approximation)";
+                if (client.creditScore >= 50) {
+                    return "Possible creditworthy client (Upper Approximation)";
+                }
             } else {
                 return "Not creditworthy";
             }

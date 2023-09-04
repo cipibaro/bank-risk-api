@@ -87,7 +87,6 @@ module.exports.create = async (req, res) => {
  */
 module.exports.update = async (req, res) => {
     try {
-
         const clientToUpdate = await Client.findById(req.params.id);
 
         if (!clientToUpdate) {

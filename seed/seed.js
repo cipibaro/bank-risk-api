@@ -15,75 +15,75 @@ mongoose.connect('mongodb+srv://ciprian:pariurix.R0@cluster0.xnup7rd.mongodb.net
 const activities = [
     {
         name: "Agricultura",
-        score: 40
+        score: 4
     },
     {
         name: "Industria extractiva",
-        score: 30
+        score: 3
     },
     {
         name: "Energie, petrol si gaze si minerit energetic",
-        score: 50
+        score: 5
     },
     {
         name: "Industria alimentara, a bauturilor ai tutunului",
-        score: 45
+        score: 4
     },
     {
         name: "Industria textila, produse textile, imbracaminte. Pielarie si incaltaminte",
-        score: 40
+        score: 4
     },
     {
         name: "Exploatarea si prelucrarea primară a lemnului. Fabricarea hartiei si a produselor din hartie",
-        score: 40
+        score: 4
     },
     {
         name: "Industria chimica si petrochimica si activitati conexe",
-        score: 35
+        score: 3
     },
     {
         name: "Industria metalurgica",
-        score: 30
+        score: 3
     },
     {
         name: "Industria mobilei. Alte activitati industriale",
-        score: 25
+        score: 2
     },
     {
         name: "Constructii civile si industriale",
-        score: 30
+        score: 3
     },
     {
         name: "Comert",
-        score: 15
+        score: 5
     },
     {
         name: "Transporturi terestre si servicii conexe",
-        score: 35
+        score: 3
     },
     {
         name: "Transporturi pe apa si servicii conexe. Transporturi aeriene si servicii conexe",
-        score: 30
+        score: 4
     },
     {
         name: "Tehnologia informatiei si telecomunicatii",
-        score: 75
+        score: 15
     },
     {
         name: "Activitati financiare, bancare si de asigurari",
-        score: 45
+        score: 10
     },
     {
         name: "Servicii de asistenta, consultanta, suport. Alte activitati de servicii",
-        score: 30
+        score: 3
     },
     {
         name: "Sănătate. Activităţi sanitar-veterinare",
-        score: 50
+        score: 5
     },
     {
         name: "Invatamant",
-        score: 50
+        score: 5
     },
 
 ];
@@ -92,155 +92,155 @@ const activities = [
 const professions = [
     {
         name: "Asistent financiar",
-        score: 45
+        score: 4
     },
     {
         name: "Actor",
-        score: 35
+        score: 3
     },
     {
         name: "Agent agricol",
-        score: 30
+        score: 3
     },
     {
         name: "Agent comert",
-        score: 45
+        score: 4
     },
     {
         name: "Agent de turism",
-        score: 50
+        score: 5
     },
     {
         name: "Agent imobiliar",
-        score: 45
+        score: 4
     },
     {
         name: "Analist financiar",
-        score: 60
+        score: 6
     },
     {
         name: "Arhitect",
-        score: 55
+        score: 5
     },
     {
         name: "Asistent director",
-        score: 70
+        score: 7
     },
     {
         name: "Asistent hr",
-        score: 50
+        score: 5
     },
     {
         name: "Asistent medical",
-        score: 75
+        score: 7
     },
     {
         name: "Asistent personal",
-        score: 45
+        score: 4
     },
     {
         name: "Asistent social",
-        score: 55
+        score: 5
     },
     {
         name: "Avocat",
-        score: 80
+        score: 8
     },
     {
         name: "Brutar",
-        score: 45
+        score: 4
     },
     {
         name: "Bucatar",
-        score: 65
+        score: 6
     },
     {
         name: "Casier",
-        score: 45
+        score: 4
     },
     {
         name: "Contabil",
-        score: 70
+        score: 7
     },
     {
         name: "Curier",
-        score: 40
+        score: 4
     },
     {
         name: "Developer",
-        score: 80
+        score: 8
     },
     {
         name: "Director general",
-        score: 120
+        score: 12
     },
     {
         name: "Educator",
-        score: 45
+        score: 4
     },
     {
         name: "Profesor",
-        score: 65
+        score: 6
     },
     {
         name: "Programator",
-        score: 80
+        score: 15
     },
     {
         name: "Inginer IT",
-        score: 100
+        score: 15
     },
     {
         name: "Inginer electronist",
-        score: 70
+        score: 7
     },
     {
         name: "Instructor auto",
-        score: 60
+        score: 6
     },
     {
         name: "Lacatus",
-        score: 40
+        score: 4
     },
     {
         name: "Mecanic auto",
-        score: 55
+        score: 5
     },
     {
         name: "Operator",
-        score: 50
+        score: 5
     },
     {
         name: "Muncitor calificat",
-        score: 50
+        score: 5
     },
     {
         name: "Psiholog",
-        score: 80
+        score: 8
     },
     {
         name: "Secretar",
-        score: 50
+        score: 5
     },
     {
         name: "Strungar",
-        score: 40
+        score: 4
     },
     {
         name: "Sudor",
-        score: 40
+        score: 4
     },
     {
         name: "Taximetrist",
-        score: 30
+        score: 3
     },
     {
         name: "Consulant vanzari",
-        score: 50
+        score: 5
     },
     {
         name: "Pensioar",
-        score: 70
+        score: 7
     }
 
 ]
@@ -253,7 +253,7 @@ const seedDB = async () => {
 
 }
 
-async function seedClients() {
+/*async function seedClients() {
     try {
         // Connect to your MongoDB database here
         // Replace the connection string with your actual MongoDB connection string
@@ -304,8 +304,10 @@ async function seedClients() {
         console.error('Error seeding clients:', error);
     }
 }
+*/
 
-seedClients();
+
+//seedClients();
 
 seedDB().then(() => {
     mongoose.connection.close();
